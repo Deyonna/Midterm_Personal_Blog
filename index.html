@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="0xdeyonna — A personal cybersecurity blog covering web, pwn, crypto, forensics, and more.">
+    <meta name="author" content="Deyonna">
+    <meta name="keywords" content="CTF, writeups, cybersecurity, hacking, web exploitation, binary exploitation">
+    <meta charset="UTF-8">
+
+    <title>0xdeyonna</title>
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <!-- Custom JS -->
+    <script src="js/main.js" defer></script>
+
+</head>
+<body>
+  <!-- Navbar injected here by main.js -->
+    <div id="navbar-placeholder"></div>
+
+      <!-- main content -->
+    <main>
+
+        <section id="hero" class="py-5" aria-labelledby="hero-heading">
+            <div class="container">
+              <p class="text-uppercase fw-semibold mb-2">Security Research & Writeups</p>
+              <h1 class="display-5 fw-bold mb-3">
+                Welcome to 0xdeyonna,<br> a personal cybersecurity blog.
+              </h1>
+              <p class="mb-4">
+                Notes, writeups, and resources from a SOC analyst that is interested in all things cybersecurity. Covering HTB machines, malware analysis and CTF writeups.
+              </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CTFTime container-->
+    <section id="upcoming-ctfs" class="py-5">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="h4 mb-0">Upcoming CTFs</h2>
+          <a href="https://ctftime.org" target="_blank" rel="noopener noreferrer"
+             class="btn btn-sm btn-outline-secondary">
+            View on CTFtime →
+          </a>
+        </div>
+
+        <!-- Loading state — hidden by JS once data arrives -->
+        <div id="ctf-loading" class="text-center py-4">
+          <div class="spinner-border spinner-border-sm" role="status"
+               aria-label="Loading upcoming CTFs">
+          </div>
+          <span class="ms-2">Loading upcoming CTFs...</span>
+        </div>
+
+        <!-- Error state — shown by JS if fetch fails -->
+        <div id="ctf-error" class="alert alert-warning d-none" role="alert">
+          Could not load CTF data. Check back later or visit
+          <a href="https://ctftime.org" target="_blank" rel="noopener noreferrer">CTFtime</a>.
+        </div>
+
+        <!-- Cards injected here by JS -->
+        <div id="ctf-list" class="row g-3" aria-live="polite" aria-label="Upcoming CTF events">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer injected here by main.js -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>
