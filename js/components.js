@@ -6,7 +6,7 @@ $(document).ready(function () {
          aria-label="Main navigation">
       <div class="container">
 
-        <a class="navbar-brand" href="/index.html"
+        <a class="navbar-brand" href="index.html"
            aria-label="0xdeyonna home page">
           0xdeyonna<span>.sh</span>
         </a>
@@ -34,19 +34,19 @@ $(document).ready(function () {
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto" role="list">
             <li class="nav-item">
-              <a class="nav-link" href="/index.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/writeups.html">Writeups</a>
+              <a class="nav-link" href="writeups.html">Writeups</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tasks.html">Requests</a>
+              <a class="nav-link" href="tasks.html">Requests</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about.html">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact.html">Contact</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
@@ -86,13 +86,13 @@ $(document).ready(function () {
           <div class="col-md-4 text-center mb-3 mb-md-0">
             <ul class="list-inline mb-0" aria-label="Footer navigation">
               <li class="list-inline-item">
-                <a class="footer-link" href="/writeups.html">Writeups</a>
+                <a class="footer-link" href="writeups.html">Writeups</a>
               </li>
               <li class="list-inline-item ms-3">
-                <a class="footer-link" href="/tasks.html">Requests</a>
+                <a class="footer-link" href="tasks.html">Requests</a>
               </li>
               <li class="list-inline-item ms-3">
-                <a class="footer-link" href="/about.html">About</a>
+                <a class="footer-link" href="about.html">About</a>
               </li>
             </ul>
           </div>
