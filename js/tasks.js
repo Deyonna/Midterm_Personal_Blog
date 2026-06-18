@@ -18,28 +18,28 @@ $(document).ready(function () {
 
   // ── App state ────────────────────────────────────────────────────
 
-  var tasks        = loadTasks(); // all tasks loaded from storage
-  var activeFilter = 'all';       // which filter button is currently active
-  var sortKey      = 'createdAt'; // which column the table is sorted by
-  var sortDir      = 'desc';      // sort direction: 'asc' (A→Z) or 'desc' (Z→A)
-  var editingId    = null;        // id of the task currently open in the edit modal
-  var chart        = null;        // the Chart.js doughnut chart instance
+  let tasks        = loadTasks(); // all tasks loaded from storage
+  let activeFilter = 'all';       // which filter button is currently active
+  let sortKey      = 'createdAt'; // which column the table is sorted by
+  let sortDir      = 'desc';      // sort direction: 'asc' (A→Z) or 'desc' (Z→A)
+  let editingId    = null;        // id of the task currently open in the edit modal
+  let chart        = null;        // the Chart.js doughnut chart instance
 
   // ── Lookup tables ────────────────────────────────────────────────
 
-  var priorityClass = {
+  let priorityClass = {
     High:          'priority-high',
     Medium:        'priority-medium',
     Low:           'priority-low'
   };
 
-  var statusLabel = {
+  let statusLabel = {
     pending:       'Pending',
     'in-progress': 'In Progress',
     completed:     'Completed'
   };
 
-  var statusClass = {
+  let statusClass = {
     pending:       'status-pending',
     'in-progress': 'status-in-progress',
     completed:     'status-completed'
@@ -59,10 +59,10 @@ $(document).ready(function () {
   // Counts how many tasks are in each status and puts the numbers on screen.
 
   function updateStats() {
-    var total   = tasks.length;
-    var done    = tasks.filter(function (t) { return t.status === 'completed';   }).length;
-    var pending = tasks.filter(function (t) { return t.status === 'pending';     }).length;
-    var inProg  = tasks.filter(function (t) { return t.status === 'in-progress'; }).length;
+    let total   = tasks.length;
+    let done    = tasks.filter(function (t) { return t.status === 'completed';   }).length;
+    let pending = tasks.filter(function (t) { return t.status === 'pending';     }).length;
+    let inProg  = tasks.filter(function (t) { return t.status === 'in-progress'; }).length;
 
     $('#stat-total').text(total);
     $('#stat-pending').text(pending);
@@ -75,14 +75,14 @@ $(document).ready(function () {
   // If it doesn't exist yet, we create it for the first time.
 
   function updateChart() {
-    var done    = tasks.filter(function (t) { return t.status === 'completed';   }).length;
-    var pending = tasks.filter(function (t) { return t.status === 'pending';     }).length;
-    var inProg  = tasks.filter(function (t) { return t.status === 'in-progress'; }).length;
+    let done    = tasks.filter(function (t) { return t.status === 'completed';   }).length;
+    let pending = tasks.filter(function (t) { return t.status === 'pending';     }).length;
+    let inProg  = tasks.filter(function (t) { return t.status === 'in-progress'; }).length;
 
-    var canvas = $('#analytics-chart')[0];
+    let canvas = $('#analytics-chart')[0];
     if (!canvas || typeof Chart === 'undefined') return;
 
-    var chartData = {
+    let chartData = {
       labels: ['Pending', 'In Progress', 'Completed'],
       datasets: [{
         data:            [pending, inProg, done],
@@ -113,8 +113,8 @@ $(document).ready(function () {
               callbacks: {
                 // Show "Label: count (xx%)" in the tooltip
                 label: function (ctx) {
-                  var total = ctx.dataset.data.reduce(function (a, b) { return a + b; }, 0);
-                  var pct   = total > 0 ? Math.round(ctx.parsed / total * 100) : 0;
+                  let total = ctx.dataset.data.reduce(function (a, b) { return a + b; }, 0);
+                  let pct   = total > 0 ? Math.round(ctx.parsed / total * 100) : 0;
                   return ' ' + ctx.label + ': ' + ctx.parsed + ' (' + pct + '%)';
                 }
               }
@@ -131,14 +131,14 @@ $(document).ready(function () {
   function renderTable() {
 
     // Step 1 — Filter: keep only tasks that match the active filter button
-    var filtered = tasks.filter(function (t) {
+    let filtered = tasks.filter(function (t) {
       return activeFilter === 'all' || t.status === activeFilter;
     });
 
     // Step 2 — Sort: make a copy (.slice()) so we don't change the original array
-    var sorted = filtered.slice().sort(function (a, b) {
-      var va = a[sortKey] || '';
-      var vb = b[sortKey] || '';
+    let sorted = filtered.slice().sort(function (a, b) {
+      let va = a[sortKey] || '';
+      let vb = b[sortKey] || '';
 
       if (sortKey === 'dueDate' || sortKey === 'createdAt') {
         // Date columns: convert to Date objects so they compare correctly
@@ -165,11 +165,11 @@ $(document).ready(function () {
     $('#empty-state').addClass('d-none');
 
     // Step 4 — Build one HTML row per task, then join them all into one string
-    var rows = sorted.map(function (t) {
-      var isDone        = t.status === 'completed';
-      var rowClass      = isDone ? 'completed-row' : '';
-      var completeLabel = isDone ? 'Undo'            : 'Complete';
-      var completeTip   = isDone ? 'Mark as pending' : 'Mark as completed';
+    let rows = sorted.map(function (t) {
+      let isDone        = t.status === 'completed';
+      let rowClass      = isDone ? 'completed-row' : '';
+      let completeLabel = isDone ? 'Undo'            : 'Complete';
+      let completeTip   = isDone ? 'Mark as pending' : 'Mark as completed';
 
       return `
         <tr class="${rowClass}" data-id="${t.id}">
@@ -207,11 +207,11 @@ $(document).ready(function () {
   $('#add-task-form').on('submit', function (e) {
     e.preventDefault(); // stop the page from reloading on submit
 
-    var title    = $('#task-title').val().trim();
-    var desc     = $('#task-desc').val().trim();
-    var category = $('#task-category').val();
-    var priority = $('#task-priority').val();
-    var dueDate  = $('#task-due').val();
+    let title    = $('#task-title').val().trim();
+    let desc     = $('#task-desc').val().trim();
+    let category = $('#task-category').val();
+    let priority = $('#task-priority').val();
+    let dueDate  = $('#task-due').val();
 
     // Make sure required fields are filled in
     if (!title || !category || !priority) {
@@ -220,7 +220,7 @@ $(document).ready(function () {
     }
 
     // Build the new task object
-    var newTask = {
+    let newTask = {
       id:          Date.now(),          // unique id: current time in milliseconds
       title:       title,
       description: desc,
@@ -241,7 +241,7 @@ $(document).ready(function () {
 
   // Show a small dismissable alert below the form
   function showAlert(msg, type) {
-    var $el = $('#add-form-alert');
+    let $el = $('#add-form-alert');
     $el.html(
       '<div class="alert alert-' + type + ' alert-dismissible fade show mt-2 py-2" role="alert">' +
         msg +
@@ -255,11 +255,11 @@ $(document).ready(function () {
   // ── Delete a task ────────────────────────────────────────────────
   // Opens a Bootstrap modal for confirmation instead of window.confirm().
 
-  var deletingId = null;
+  let deletingId = null;
 
   $(document).on('click', '.btn-delete', function () {
-    var id   = parseInt($(this).data('id'), 10);
-    var task = tasks.find(function (t) { return t.id === id; });
+    let id   = parseInt($(this).data('id'), 10);
+    let task = tasks.find(function (t) { return t.id === id; });
     if (!task) return;
 
     deletingId = id;
@@ -283,8 +283,8 @@ $(document).ready(function () {
   // The same button acts as "Complete" or "Undo" depending on current status.
 
   $(document).on('click', '.btn-complete', function () {
-    var id   = parseInt($(this).data('id'), 10);
-    var task = tasks.find(function (t) { return t.id === id; });
+    let id   = parseInt($(this).data('id'), 10);
+    let task = tasks.find(function (t) { return t.id === id; });
     if (!task) return;
 
     // Flip the status
@@ -296,8 +296,8 @@ $(document).ready(function () {
   // ── Edit a task — open the modal pre-filled with current values ───
 
   $(document).on('click', '.btn-edit', function () {
-    var id   = parseInt($(this).data('id'), 10);
-    var task = tasks.find(function (t) { return t.id === id; });
+    let id   = parseInt($(this).data('id'), 10);
+    let task = tasks.find(function (t) { return t.id === id; });
     if (!task) return;
 
     editingId = id; // remember which task we're editing
@@ -318,10 +318,10 @@ $(document).ready(function () {
   $('#save-edit-btn').on('click', function () {
     if (editingId === null) return;
 
-    var task = tasks.find(function (t) { return t.id === editingId; });
+    let task = tasks.find(function (t) { return t.id === editingId; });
     if (!task) return;
 
-    var newTitle = $('#edit-title').val().trim();
+    let newTitle = $('#edit-title').val().trim();
     if (!newTitle) {
       alert('Title is required.');
       return;
@@ -359,7 +359,7 @@ $(document).ready(function () {
   // Clicking the same column again flips between ascending and descending.
 
   $(document).on('click', '[data-sort]', function () {
-    var key = $(this).data('sort');
+    let key = $(this).data('sort');
 
     if (sortKey === key) {
       // Same column: flip direction

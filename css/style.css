@@ -1,0 +1,53 @@
+#hero {
+  padding-top:    5rem;
+  padding-bottom: 2.5rem;
+}
+
+#hero h1 {
+  font-size:      clamp(1.8rem, 5vw, 2.8rem);
+  font-weight:    800;
+  letter-spacing: -.04em;
+  line-height:    1.15;
+}
+
+.hero-lead {
+  max-width:  560px;
+  color:      var(--bs-secondary-color);
+  font-size:  .9375rem;
+}
+
+/* ── CTFtime section ───────────────────────────────────────────── */
+
+.ctf-card .card-title a {
+  text-decoration: none;
+  font-weight:     600;
+  color:           var(--bs-body-color);
+}
+
+.ctf-card .card-title a:hover { color: var(--accent); }
+
+.ctf-card .badge {
+  font-size:   .68rem;
+  font-family: var(--font-mono);
+}
+
+/* ── Latest Activity section ───────────────────────────────────── */
+
+.activity-item {
+  display:      flex;
+  align-items:  flex-start;
+  gap:          .75rem;
+  padding:      .75rem 0;
+  border-bottom: 1px solid var(--bs-border-color-translucent);
+}
+
+.activity-item:last-child { border-bottom: none; }
+
+.activity-dot {
+  width:  10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  flex-shrink: 0;
+  margin-top:  .45rem;
+}

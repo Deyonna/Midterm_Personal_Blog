@@ -1,0 +1,55 @@
+/* ── CSS Variables ───────────────────────────────────────────── */
+:root {
+  --accent:     #00d084;
+  --accent-dim: rgba(0, 208, 132, 0.12);
+  --font-mono:  'Courier New', Courier, monospace;
+}
+
+/* ── Accent utility ──────────────────────────────────────────── */
+.accent { color: var(--accent); }
+
+/* ── Navbar ──────────────────────────────────────────────────── */
+.navbar {
+  border-bottom: 1px solid var(--bs-border-color);
+  backdrop-filter: blur(6px);
+}
+
+.navbar-brand {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size:   1.1rem;
+  letter-spacing: -.5px;
+}
+
+.navbar-brand span { color: var(--accent); }
+
+.nav-link {
+  font-size:  .88rem;
+  font-weight: 500;
+  transition: color .15s;
+}
+
+.nav-link:hover,
+.nav-link.active { color: var(--accent) !important; }
+
+#dark-mode-toggle {
+  font-size:   1rem;
+  line-height: 1;
+  border:      none;
+  background:  transparent;
+  color:       var(--bs-body-color);
+  transition:  color .15s;
+}
+
+#dark-mode-toggle:hover { color: var(--accent); }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer { border-top: 1px solid var(--bs-border-color); }
+
+.footer-link {
+  color:           var(--bs-secondary-color);
+  text-decoration: none;
+  transition:      color .15s;
+}
+
+.footer-link:hover { color: var(--accent); }
