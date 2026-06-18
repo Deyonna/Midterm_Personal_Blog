@@ -20,7 +20,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <!-- Custom JS -->
     <script src="js/main.js" defer></script>
-
+    <script src="js/theme.js"      defer></script>
+    <script src="js/components.js" defer></script>
 </head>
 <body>
   <!-- Navbar injected here by main.js -->
@@ -44,33 +45,40 @@
     </main>
 
     <!-- CTFTime container-->
-    <section id="upcoming-ctfs" class="py-5">
+    <section id="upcoming-ctfs" class="py-5" aria-labelledby="ctf-heading">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center mb-4">
-          <h2 class="h4 mb-0">Upcoming CTFs</h2>
-          <a href="https://ctftime.org" target="_blank" rel="noopener noreferrer"
-             class="btn btn-sm btn-outline-secondary">
+          <h2 id="ctf-heading" class="h4 mb-0">Upcoming CTFs</h2>
+          <a href="https://ctftime.org"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-sm btn-outline-secondary"
+             aria-label="View all CTFs on CTFtime (opens in new tab)">
             View on CTFtime →
           </a>
         </div>
 
-        <!-- Loading state — hidden by JS once data arrives -->
-        <div id="ctf-loading" class="text-center py-4">
-          <div class="spinner-border spinner-border-sm" role="status"
-               aria-label="Loading upcoming CTFs">
+        <!-- Loading spinner — hidden once data arrives -->
+        <div id="ctf-loading" class="text-center py-4" aria-live="polite">
+          <div class="spinner-border spinner-border-sm text-secondary"
+               role="status" aria-label="Loading CTF events">
           </div>
-          <span class="ms-2">Loading upcoming CTFs...</span>
+          <span class="ms-2 text-muted">Loading upcoming CTFs…</span>
         </div>
 
-        <!-- Error state — shown by JS if fetch fails -->
-        <div id="ctf-error" class="alert alert-warning d-none" role="alert">
+        <!-- Error — shown if all proxy attempts fail -->
+        <div id="ctf-error"
+             class="alert alert-warning d-none" role="alert" aria-live="assertive">
+          <i class="bi bi-exclamation-triangle me-1" aria-hidden="true"></i>
           Could not load CTF data. Check back later or visit
           <a href="https://ctftime.org" target="_blank" rel="noopener noreferrer">CTFtime</a>.
         </div>
 
-        <!-- Cards injected here by JS -->
-        <div id="ctf-list" class="row g-3" aria-live="polite" aria-label="Upcoming CTF events">
+        <!-- Cards injected by home.js -->
+        <div id="ctf-list"
+             class="row g-3"
+             aria-live="polite"
+             aria-label="Upcoming CTF events">
         </div>
 
       </div>
