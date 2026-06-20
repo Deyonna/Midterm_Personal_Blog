@@ -10,12 +10,6 @@
   line-height:    1.15;
 }
 
-.hero-lead {
-  max-width:  560px;
-  color:      var(--bs-secondary-color);
-  font-size:  .9375rem;
-}
-
 /* ── CTFtime section ───────────────────────────────────────────── */
 
 .ctf-card .card-title a {

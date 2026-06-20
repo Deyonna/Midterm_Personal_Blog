@@ -1,8 +1,3 @@
-#about-header {
-  padding: 4rem 0 2rem;
-  border-bottom: 1px solid var(--bs-border-color-translucent);
-}
-
 /* ── Bio section ───────────────────────────────────────────────── */
 #bio { padding: 3rem 0; }
 
@@ -21,11 +16,6 @@
 }
 
 /* ── Skills chips ──────────────────────────────────────────────── */
-#skills {
-  padding:    2.5rem 0;
-  border-top: 1px solid var(--bs-border-color-translucent);
-}
-
 .skill-chip {
   display:       inline-block;
   padding:       .25rem .75rem;
@@ -69,12 +59,6 @@
 
 .team-card:hover .team-avatar { border-color: var(--accent); }
 
-.team-role {
-  font-size:   .8rem;
-  font-family: var(--font-mono);
-  color:       var(--accent);
-}
-
 /* ── Carousel ──────────────────────────────────────────────────── */
 #testimonials {
   padding:    2.5rem 0;
@@ -85,12 +69,6 @@
   font-size:   1.05rem;
   font-style:  italic;
   line-height: 1.8;
-}
-
-.carousel-item .cite {
-  font-size:   .8rem;
-  font-family: var(--font-mono);
-  color:       var(--accent);
 }
 
 .carousel-control-prev,

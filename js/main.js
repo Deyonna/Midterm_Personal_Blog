@@ -31,7 +31,7 @@ function renderCTFs(data) {
 
     return `
       <div class="col-12 col-md-6 col-lg-4">
-        <article class="card h-100" aria-label="CTF event: ${ctf.title}">
+        <article class="ctf-card card h-100" aria-label="CTF event: ${ctf.title}">
           <div class="card-body">
             <h3 class="card-title h6">
               <a href="${ctf.ctftime_url}" target="_blank" rel="noopener noreferrer">
@@ -108,7 +108,7 @@ tryProxy(0);
   if (recent.length === 0) {
     $activityList.html(`
       <p class="text-muted small">
-        No requests yet. <a href="/tasks.html">Be the first to request a writeup!</a>
+        No requests yet. <a href="tasks.html">Be the first to request a writeup!</a>
       </p>
     `);
     return;
