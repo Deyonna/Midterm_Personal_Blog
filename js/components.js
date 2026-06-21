@@ -94,11 +94,14 @@ $(document).ready(function () {
               <li class="list-inline-item ms-3">
                 <a class="footer-link" href="about.html">About</a>
               </li>
+              <li class="list-inline-item ms-3">
+                <a class="footer-link" href="contact.html">Contact</a>
+              </li>
             </ul>
           </div>
 
           <div class="col-md-3 text-center text-md-end">
-            <a href="https://github.com/"
+            <a href="https://github.com/Deyonna"
                target="_blank" rel="noopener noreferrer"
                aria-label="GitHub profile (opens in new tab)"
                class="footer-link me-3" title="GitHub">
