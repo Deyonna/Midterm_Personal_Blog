@@ -97,6 +97,8 @@ One writeup can be marked featured: true to promote it to the large featured car
 
 Tag clicks inside cards are kept in sync with the tag cloud sidebar. Clicking a tag on a card highlights the matching button in the sidebar and filters the grid, so both entry points behave identically.
 
+Currently no writeups are actually present on the website, it is an implementation to be taken into consideration for future builds. Each time the read button is pressed it goes to the top of the page since `href` is set to `#`.
+
 ### About Page
 
 The bio section uses a Bootstrap two-column grid to place the avatar and social links on the left and the text on the right. On smaller screens they are stacked vertically.
@@ -138,13 +140,13 @@ Audited performance and accessibility using [PageSpeed Insights](https://pagespe
 
 | Page | Report |
 |---|---|
-| Home (`index.html`) | [View report](#) |
-| Writeups (`writeups.html`) | [View report](#) |
-| Requests (`tasks.html`) | [View report](#) |
-| About (`about.html`) | [View report](#)  |
-| Contact (`contact.html`) | [View report](#)  |
+| Home (`index.html`) | [View report](https://pagespeed.web.dev/analysis/https-deyonna-github-io-Midterm_Personal_Blog/xacwg112zz?form_factor=desktop) |
+| Writeups (`writeups.html`) | [View report](https://pagespeed.web.dev/analysis/https-deyonna-github-io-Midterm_Personal_Blog-writeups-html/hq9pt4or6r?form_factor=desktop) |
+| Requests (`tasks.html`) | [View report](https://pagespeed.web.dev/analysis/https-deyonna-github-io-Midterm_Personal_Blog-tasks-html/rzet4mj4kf?form_factor=desktop) |
+| About (`about.html`) | [View report](https://pagespeed.web.dev/analysis/https-deyonna-github-io-Midterm_Personal_Blog-about-html/7ndym9392c?form_factor=desktop)  |
+| Contact (`contact.html`) | [View report](https://pagespeed.web.dev/analysis/https-deyonna-github-io-Midterm_Personal_Blog-contact-html/partadwrof?form_factor=desktop)  |
 
-Overall great scores, lower performance on mobile devices. Suggestion to load only specific parts of bootstrap and jquery to reduce loading times.
+Overall great scores both for performance and accessibility. Suggestion to load only specific parts of bootstrap and jquery to reduce loading times.
 
 
 ## Questions
