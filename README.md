@@ -1,4 +1,4 @@
-# 0xdeyonna.sh — Personal Cybersecurity Blog
+# 0xdeyonna.sh - A Personal Cybersecurity Blog
 
 A personal cybersecurity blog covering HTB machines, CTF writeups, malware analysis, and security research.
 
@@ -11,7 +11,7 @@ A personal cybersecurity blog covering HTB machines, CTF writeups, malware analy
 
 ## Table of Contents
 
-- [0xdeyonna.sh — Personal Cybersecurity Blog](#0xdeyonnash--personal-cybersecurity-blog)
+- [0xdeyonna.sh - A Personal Cybersecurity Blog](#0xdeyonnash--personal-cybersecurity-blog)
   - [Table of Contents](#table-of-contents)
   - [Coding Decisions \& Short Descriptions of Each Page](#coding-decisions--short-descriptions-of-each-page)
     - [Index Main Page](#index-main-page)
