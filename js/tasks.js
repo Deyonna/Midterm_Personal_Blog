@@ -19,7 +19,7 @@ $(document).ready(function () {
   // ── App state ────────────────────────────────────────────────────
 
   let tasks        = loadTasks(); // all tasks loaded from storage
-  let activeFilter         = 'all'; // which status filter button is currently active
+  let activeFilter = 'all'; // which status filter button is currently active
   let activePriorityFilter = 'all'; // which priority filter button is currently active
   let sortKey      = 'createdAt'; // which column the table is sorted by
   let sortDir      = 'desc';      // sort direction: 'asc' (A→Z) or 'desc' (Z→A)
