@@ -2,7 +2,7 @@
 
 A personal cybersecurity blog covering HTB machines, CTF writeups, malware analysis, and security research.
 
-**GitHub:** [https://github.com/Deyonna/](https://github.com/Deyonna/)
+**GitHub:** [https://github.com/Deyonna/Midterm_Personal_Blog#0xdeyonnash--personal-cybersecurity-blog](https://github.com/Deyonna/Midterm_Personal_Blog#0xdeyonnash--personal-cybersecurity-blog)
 
 
 **Deployment**: [https://deyonna.github.io/Midterm_Personal_Blog/](https://deyonna.github.io/Midterm_Personal_Blog/)
