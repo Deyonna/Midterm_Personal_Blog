@@ -182,12 +182,12 @@
         <div class="col-lg-8">
 
           <!-- Filter bar -->
-          <div class="mb-3 d-flex flex-wrap gap-2"
+          <div class="mb-2 d-flex flex-wrap gap-2"
                role="group"
                aria-label="Filter requests by status">
             <button class="filter-btn active"
                     data-filter="all"
-                    aria-pressed="true">All</button>
+                    aria-pressed="true">All Statuses</button>
             <button class="filter-btn"
                     data-filter="pending"
                     aria-pressed="false">Pending</button>
@@ -197,6 +197,24 @@
             <button class="filter-btn"
                     data-filter="completed"
                     aria-pressed="false">Completed</button>
+          </div>
+
+          <!-- Priority filter bar -->
+          <div class="mb-3 d-flex flex-wrap gap-2"
+               role="group"
+               aria-label="Filter requests by priority">
+            <button class="priority-btn active"
+                    data-priority="all"
+                    aria-pressed="true">All Priorities</button>
+            <button class="priority-btn priority-btn--high"
+                    data-priority="High"
+                    aria-pressed="false">High</button>
+            <button class="priority-btn priority-btn--medium"
+                    data-priority="Medium"
+                    aria-pressed="false">Medium</button>
+            <button class="priority-btn priority-btn--low"
+                    data-priority="Low"
+                    aria-pressed="false">Low</button>
           </div>
 
           <!-- Requests table -->

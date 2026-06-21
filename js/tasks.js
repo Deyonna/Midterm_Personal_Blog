@@ -19,7 +19,8 @@ $(document).ready(function () {
   // ── App state ────────────────────────────────────────────────────
 
   let tasks        = loadTasks(); // all tasks loaded from storage
-  let activeFilter = 'all';       // which filter button is currently active
+  let activeFilter         = 'all'; // which status filter button is currently active
+  let activePriorityFilter = 'all'; // which priority filter button is currently active
   let sortKey      = 'createdAt'; // which column the table is sorted by
   let sortDir      = 'desc';      // sort direction: 'asc' (A→Z) or 'desc' (Z→A)
   let editingId    = null;        // id of the task currently open in the edit modal
@@ -130,9 +131,11 @@ $(document).ready(function () {
 
   function renderTable() {
 
-    // Step 1 — Filter: keep only tasks that match the active filter button
+    // Step 1 — Filter: keep only tasks that match both active filter buttons
     let filtered = tasks.filter(function (t) {
-      return activeFilter === 'all' || t.status === activeFilter;
+      let statusMatch   = activeFilter === 'all'         || t.status   === activeFilter;
+      let priorityMatch = activePriorityFilter === 'all' || t.priority === activePriorityFilter;
+      return statusMatch && priorityMatch;
     });
 
     // Step 2 — Sort: make a copy (.slice()) so we don't change the original array
@@ -343,15 +346,21 @@ $(document).ready(function () {
     editingId = null;
   });
 
-  // ── Filter buttons (All / Pending / In Progress / Completed) ─────
+  // ── Status filter buttons (All / Pending / In Progress / Completed) ─
 
   $(document).on('click', '.filter-btn', function () {
-    activeFilter = $(this).data('filter'); // read the data-filter="..." attribute
-
-    // Update which button looks active
+    activeFilter = $(this).data('filter');
     $('.filter-btn').removeClass('active').attr('aria-pressed', 'false');
     $(this).addClass('active').attr('aria-pressed', 'true');
+    renderTable();
+  });
 
+  // ── Priority filter buttons (All Priorities / High / Medium / Low) ──
+
+  $(document).on('click', '.priority-btn', function () {
+    activePriorityFilter = $(this).data('priority');
+    $('.priority-btn').removeClass('active').attr('aria-pressed', 'false');
+    $(this).addClass('active').attr('aria-pressed', 'true');
     renderTable();
   });
 
