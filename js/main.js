@@ -7,7 +7,6 @@ const CTFTIME_URL = 'https://ctftime.org/api/v1/events/?limit=6';
 // allorigins /get wraps the response in JSON so it survives in sandboxed
 // WebViews (VS Code integrated browser) better than raw-passthrough proxies.
 const PROXIES = [
-  { url: 'https://api.allorigins.win/get?url=' + encodeURIComponent(CTFTIME_URL), unwrap: true },
   { url: 'https://corsproxy.io/?' + encodeURIComponent(CTFTIME_URL) },
   { url: 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(CTFTIME_URL) },
   { url: 'https://thingproxy.freeboard.io/fetch/' + CTFTIME_URL }
